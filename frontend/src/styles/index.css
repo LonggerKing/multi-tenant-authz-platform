@@ -1,0 +1,210 @@
+/* ============================================================
+   设计令牌
+   ============================================================ */
+:root {
+  --ink-900: #0a1020;
+  --ink-800: #101a2e;
+  --ink-700: #1a2740;
+  --canvas: #f4f6f9;
+  --surface: #ffffff;
+  --line: #e5e9f0;
+  --muted: #6b7688;
+  --text: #17202f;
+  --accent: #0f9d76;
+  --accent-dark: #0b7c5d;
+  --accent-soft: #e7f7f1;
+  --amber: #c47f17;
+  --amber-soft: #fdf3e3;
+  --danger: #d0503f;
+  --radius: 14px;
+
+  --el-color-primary: #0f9d76;
+  --el-color-primary-light-3: #4bb89a;
+  --el-color-primary-light-5: #82cdb6;
+  --el-color-primary-light-7: #b9e2d4;
+  --el-color-primary-light-8: #d2ece3;
+  --el-color-primary-light-9: #e7f7f1;
+  --el-color-primary-dark-2: #0b7c5d;
+  --el-border-radius-base: 10px;
+  --el-font-size-base: 13px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--canvas);
+  color: var(--text);
+  font-family:
+    "Inter",
+    "PingFang SC",
+    "Microsoft YaHei",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+/* ============================================================
+   通用版式
+   ============================================================ */
+.pp-page {
+  padding: 24px 28px 40px;
+  animation: pp-rise 0.35s ease both;
+}
+
+@keyframes pp-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pp-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow:
+    0 1px 2px rgba(16, 24, 40, 0.04),
+    0 12px 28px -18px rgba(16, 24, 40, 0.35);
+}
+
+.pp-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.pp-toolbar .spacer {
+  flex: 1;
+}
+
+.pp-title {
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.pp-sub {
+  color: var(--muted);
+  font-size: 12.5px;
+  margin: 6px 0 0;
+}
+
+.pp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pp-chip.neutral {
+  background: #eef1f6;
+  color: #4a5568;
+}
+
+.pp-chip.warn {
+  background: var(--amber-soft);
+  color: var(--amber);
+}
+
+.pp-mono {
+  font-family: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+  font-size: 12.5px;
+}
+
+.pp-empty {
+  padding: 40px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ============================================================
+   Element Plus 微调
+   ============================================================ */
+.el-card,
+.el-table,
+.el-dialog,
+.el-tree {
+  --el-border-radius-base: 10px;
+}
+
+.el-table th.el-table__cell {
+  background: #f8fafc;
+  color: #55606f;
+  font-weight: 600;
+}
+
+.el-table {
+  --el-table-border-color: var(--line);
+  font-size: 13px;
+}
+
+.el-dialog {
+  border-radius: 16px;
+  padding: 4px 4px 8px;
+}
+
+.el-dialog__header {
+  padding: 18px 20px 8px;
+}
+
+.el-dialog__title {
+  font-size: 15.5px;
+  font-weight: 650;
+}
+
+.el-dialog__body {
+  padding: 12px 20px 4px;
+}
+
+.el-button {
+  font-weight: 550;
+}
+
+.el-tag {
+  border-radius: 6px;
+}
+
+/* ============================================================
+   滚动条
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cdd4e0;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b6bfcd;
+}

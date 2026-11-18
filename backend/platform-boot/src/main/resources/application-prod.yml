@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:platform}
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USER:platform}
+    password: ${DB_PASSWORD:platform}
+  sql:
+    init:
+      mode: never
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      timeout: 2s
+
+platform:
+  auth:
+    mode: ${PLATFORM_AUTH_MODE:internal}
+    secret: ${PLATFORM_JWT_SECRET:please-override-this-secret-in-production-32bytes}
+    keycloak-jwk-set-uri: ${KEYCLOAK_JWK_SET_URI:http://localhost:8180/realms/platform/protocol/openid-connect/certs}
+    keycloak-issuer: ${KEYCLOAK_ISSUER:http://localhost:8180/realms/platform}
+  cache:
+    redis-enabled: true
+    ttl-seconds: 600
+
+logging:
+  level:
+    com.enterprise.platform: info
